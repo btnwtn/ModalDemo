@@ -1,5 +1,9 @@
 import localforage from "localforage";
-import { UPDATE_CONTENT } from "./constants";
+import { UPDATE_CONTENT, LOCALSTORAGE_NS } from "./constants";
+
+const updateApplicationCache = () => (dispatch, getState) => {
+  localforage.setItem(LOCALSTORAGE_NS, getState())
+}
 
 export const updateContent = ({ title, content }) => (dispatch, getState) => {
   dispatch({
@@ -10,5 +14,5 @@ export const updateContent = ({ title, content }) => (dispatch, getState) => {
     }
   });
 
-  localforage.setItem("applicationState", getState());
+  dispatch(updateApplicationCache())
 };
