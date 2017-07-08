@@ -1,5 +1,7 @@
 # Modal Demo
 
+![Demo GIF](/docs/modal.gif)
+
 Basic React application that shows off some fun things like Compound-State
 Components, Higher-Order Components, localstorage cacheing and some very basic 
 Redux integration(which is arguably overkill for this example).
